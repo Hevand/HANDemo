@@ -1,0 +1,35 @@
+﻿@model HAN.Demo.Models.FibonnaciModel
+
+@{
+    ViewData["Title"] = "Fibonacci - MemoryCache";
+}
+
+
+<h1>Fibonacci (@Model.Index) = @Model.Number </h1>
+<h2>w/ Memory Caching enabled</h2>
+<div class="d-sm-inline-flex flex-sm-row-reverse">
+    <dl class="row">
+        <dt class="col-sm-2">
+            <a href="@Url.Action("MemoryCache",new {index = Model.Index - 1})">&lt;</a>
+        </dt>
+        <dt class="col-sm-2">
+            <a href="@Url.Action("MemoryCache",new {index = Model.Index + 1})">&gt;</a>
+        </dt>
+    </dl>
+</div>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CalculationTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CalculationTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GeneratedOn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GeneratedOn)
+        </dd>
+    </dl>
+</div>
